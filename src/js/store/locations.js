@@ -24,6 +24,10 @@ class Locations {
     return response;
   }
 
+  getCityCodeByKey(key) {
+    return this.cities[key].code;
+  }
+
   createShortCitiesList(cities) {
     // key : value
     // [key, value]
@@ -58,8 +62,9 @@ class Locations {
     );
   }
 
-  getCitiesByCountryCode(code) {
-    return this.cities.filter((city) => city.country_code === code);
+  async fetchTickets(params) {
+    const response = await this.api.prices(params);
+    console.log("response", response);
   }
 }
 
