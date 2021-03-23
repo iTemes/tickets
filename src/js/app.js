@@ -2,6 +2,7 @@ import "../css/style.css";
 import "./plugins";
 import locations from "./store/locations";
 import formUI from "./views/form";
+import ticketsUI from "./views/tickets";
 import currencyUI from "./views/currency";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -39,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return_date,
       currency,
     });
-    // CODE, CODE, 2021-02, 2021-02
+    // CODE, CODE, 2021-02, 2021-02, $
+
+    ticketsUI.renderTickets(locations.lastSearch);
   }
 });
